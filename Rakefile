@@ -4,10 +4,10 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |s|
     s.name = "imdb-tv"
-    s.summary = %Q{TODO}
+    s.summary = "Library to get tv episode info"
     s.email = "GFunk913@gmail.com"
     s.homepage = "http://github.com/GFunk911/imdb-tv"
-    s.description = "TODO"
+    s.description = "Library to get tv episode info"
     s.authors = ["Mike Harris"]
   end
 rescue LoadError
@@ -43,3 +43,8 @@ rescue LoadError
 end
 
 task :default => :spec
+
+task :print_episodes do
+  require File.dirname(__FILE__) + "/lib/imdb_tv"
+  ImdbTV::Show.new(:title => ENV['show']).episodes.each { |x| puts x }
+end

@@ -1,7 +1,2 @@
-require File.dirname(__FILE__) + '/spec_helper'
-
-describe "ImdbTv" do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
-  end
-end
+files = Dir[File.dirname(__FILE__)+"/spec_*.rb"].reject { |x| x =~ /spec_helper/ }
+files.each { |x| require x }

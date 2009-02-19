@@ -1,0 +1,1 @@
+%w(ext show page episode).each { |x| require File.dirname(__FILE__) + "/imdb_tv/#{x}" }
